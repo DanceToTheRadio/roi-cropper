@@ -4,7 +4,7 @@
 import os
 
 # path to your txt files
-path = f"coordenadas"
+path = f"coordinates"
 
 
 file_list = [f for f in os.listdir(path) if f.endswith('.txt')]
