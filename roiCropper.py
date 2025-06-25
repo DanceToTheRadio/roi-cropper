@@ -13,7 +13,7 @@ import os
 input_path = 'images/'
 
 # Colour map used to show and save images
-cmap = 'gray'
+cmap = 'hsv'
 
 # Coordinates text files directory (output)
 coords_path = 'coordinates/'
@@ -28,11 +28,26 @@ img_format = 'jpg'
 
 
 # variables initialization
+if not os.path.exists(input_path):
+    print(colored("Path in input_path doesn't exist! Modify input_path (line 13) or create the directory", 'red'))
+    exit(1)
+
+if not os.path.exists(coords_path):
+      os.makedirs(coords_path)
+
+if not os.path.exists(cropped_path):
+    os.makedirs(cropped_path)
+
 img_list = sorted([
     os.path.join(input_path, f)
     for f in os.listdir(input_path)
     if f.lower().endswith(img_format)
 ])
+
+if len(img_list) == 0:
+    print(colored(f"No {img_format.upper()} images found in {input_path}. Are you sure img_format and input_path are correctly set?", 'red'))
+    exit(1)
+
 coords = []
 drawn_points = []
 rectangles = []
