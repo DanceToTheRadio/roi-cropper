@@ -39,8 +39,6 @@ A simple GUI tool to help you quickly crop rectangles of interest (ROIs) and obt
     Example of console output during usage
 </p>
 
-There is another file, `addPoints.py`, which was written for my *very* specific needs. You will probably not need it, but I’m sharing it anyway. It just adds "0,0,0,0" lines to text files that have fewer than 6 lines.
-
 ## Configuration Variables
 
 - `input_path`: Path to your original images directory.
